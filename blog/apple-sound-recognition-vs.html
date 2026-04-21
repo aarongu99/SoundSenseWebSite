@@ -457,7 +457,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:64px
       <a href="../pricing.html" class="nav-link">Pricing</a>
       <a href="../about.html" class="nav-link">About</a>
       <a href="../faq.html" class="nav-link">FAQ</a>
-      <a href="../in-memory-of-jeff.html" class="nav-jeff" title="In memory of Jeff Gordon">Jeff</a><a href="../download.html" class="btn btn-brand btn-sm">Download</a>
+      <a href="../in-memory-of-jeff.html" class="nav-jeff" title="In memory of Jeff Gordon">Jeff</a><a href="../waitlist.html" class="btn btn-brand btn-sm">Join the Waitlist</a>
     </div>
   </div>
 </nav>
@@ -484,24 +484,24 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:64px
 
       <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Where SoundSense adds value</h2>
 
-      <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Custom sound training</h3>
-      <p style="margin-bottom:20px">Apple's Sound Recognition knows what a generic doorbell sounds like. It does not know what <em>your</em> doorbell sounds like. If your building has an unusual intercom chime, a chime tone instead of a ring, or a custom-programmed smart doorbell, Apple's generic classifier can miss it. SoundSense lets you train on your specific sound in about 30 seconds and recognizes it reliably from then on.</p>
-
       <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Urgency scaling</h3>
       <p style="margin-bottom:20px">When Apple Sound Recognition detects a sound, it sends a notification. That notification looks roughly the same whether the sound was a smoke alarm or a microwave beep. SoundSense gives each sound an urgency score and scales the alert to match: full-screen takeover and strongest haptic for a smoke alarm, gentle haptic for a microwave, nothing for a sound you have told it to ignore in this context.</p>
 
       <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Context awareness</h3>
       <p style="margin-bottom:20px">Apple's feature treats "doorbell at 2 PM" and "doorbell at 3 AM" the same. SoundSense treats them differently, because the same sound at different times means different things. Same with home vs. travel, or calm environment vs. loud environment.</p>
 
-      <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Apple Watch integration</h3>
-      <p style="margin-bottom:20px">Apple's Sound Recognition notifies your Watch via standard iOS mirroring. SoundSense Plus includes a dedicated Watch app with per-sound haptic patterns, urgency-scaled wrist alerts, and a standalone timeline.</p>
-
       <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Rich timeline</h3>
-      <p style="margin-bottom:28px">Apple's implementation is notification-first. SoundSense maintains a timeline of every detected sound with timestamps, locations (if enabled), and urgency scores, useful for reviewing what happened during a loud day, or for sharing a report with a caregiver or hearing specialist.</p>
+      <p style="margin-bottom:20px">Apple's implementation is notification-first. SoundSense maintains a timeline of every detected sound with timestamps, locations (if enabled), and urgency scores, useful for reviewing what happened during a loud day, or for sharing a report with a caregiver or hearing specialist.</p>
+
+      <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Designed for deaf and hard of hearing users</h3>
+      <p style="margin-bottom:20px">Apple's Sound Recognition is a general-purpose accessibility feature. SoundSense is a focused tool, built with feedback from the NTID community at RIT, for people who depend on sound awareness every day. The defaults, the copy, the haptic patterns, and the alert tiers are all tuned for that audience.</p>
+
+      <h3 style="font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px;letter-spacing:-0.015em">Layered detection for battery life</h3>
+      <p style="margin-bottom:28px">Running an always-on classifier is expensive. SoundSense uses layered detection so the heavy work only runs when something interesting happens. The result is designed to stay efficient enough to run all day. A dedicated Apple Watch app is also coming later as part of SoundSense+.</p>
 
       <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Can you run both?</h2>
       <p style="margin-bottom:20px">Yes. Apple's Sound Recognition and SoundSense are not mutually exclusive. They can both listen and both alert, and you will occasionally get redundant notifications, which, for safety-critical sounds, is a feature, not a bug.</p>
-      <p style="margin-bottom:28px">If you want to reduce overlap, turn off Apple's Sound Recognition for any category where you have taught SoundSense a custom fingerprint. Use Apple's feature as a safety net for generic sounds SoundSense has not been trained on yet, and use SoundSense as your primary tool for the specific sounds you rely on day to day.</p>
+      <p style="margin-bottom:28px">If you want to reduce overlap, turn off Apple's Sound Recognition for any category SoundSense is already handling well for you. Use Apple's feature as a safety net and use SoundSense as your primary tool for the day-to-day experience.</p>
 
       <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">When to start with Apple's built-in</h2>
       <p style="margin-bottom:20px">Start with Apple's Sound Recognition if:</p>
@@ -516,10 +516,10 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:64px
       <p style="margin-bottom:20px">Move to SoundSense if:</p>
       <ul style="list-style:disc;padding-left:24px;margin-bottom:28px">
         <li style="margin-bottom:8px">You rely on sound awareness as a core part of your day, not just a safety net.</li>
-        <li style="margin-bottom:8px">You have unusual sounds: custom doorbell, specific phrase, a specific person calling your name.</li>
         <li style="margin-bottom:8px">You want alerts that distinguish between a microwave beep and a fire alarm.</li>
-        <li style="margin-bottom:8px">You want Apple Watch haptics that mean something specific per sound.</li>
+        <li style="margin-bottom:8px">You want the app to consider time of day and location, not just whether a sound happened.</li>
         <li style="margin-bottom:8px">You want to review what was detected during the day, not just respond to live notifications.</li>
+        <li style="margin-bottom:8px">You are looking for a tool designed specifically for deaf and hard of hearing users.</li>
       </ul>
 
       <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Apple's feature is a great starting point</h2>
@@ -555,16 +555,16 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:64px
     </div>
   </div>
 </section>
-<section id="download" class="final-cta">
+<section id="waitlist" class="final-cta">
   <div class="wrap">
     <div class="eyebrow reveal s1" style="display:inline-block;margin-bottom:16px">Try it free</div>
     <h2 class="h2 reveal s2">Get both working together.</h2>
     <span class="accent reveal s3">One layer on top of another.</span>
-    <div class="ctas reveal s4"><a href="../download.html" class="btn btn-primary">Download on the App Store</a></div>
+    <div class="ctas reveal s4"><a href="../waitlist.html" class="btn btn-primary">Join the Waitlist</a></div>
   </div>
 </section>
 </main>
-<footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="../index.html" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="../how-it-works.html">How it works</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../download.html">Download</a></li><li><a href="../faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../press.html">Press</a></li><li><a href="../blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../accessibility.html">Accessibility</a></li><li><a href="../security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="../accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
+<footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="../index.html" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="../how-it-works.html">How it works</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../waitlist.html">Join the Waitlist</a></li><li><a href="../faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../press.html">Press</a></li><li><a href="../blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of service</a></li><li><a href="../accessibility.html">Accessibility</a></li><li><a href="../security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="../accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
 <script src="../js/main.js" defer></script>
 </body>
 </html>
