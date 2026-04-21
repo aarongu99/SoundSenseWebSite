@@ -23,6 +23,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"SoundSense","description":"Sound awareness app for deaf and hard of hearing users","brand":{"@type":"Brand","name":"SoundSense"},"offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"SoundSense+","price":"4.99","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitCode":"MON"}}}]}
 </script>
+<link rel="stylesheet" href="/css/waitlist.css">
 </head>
 <body>
 <a href="#main" class="skip">Skip to main content</a>
@@ -78,9 +79,11 @@
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 10-10"/></svg>Apple Watch alerts</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 10-10"/></svg>Auto mode switching</li>
         </ul>
-        <form class="waitlist" onsubmit="event.preventDefault();this.querySelector('button').innerText='Thanks!'">
-          <input type="email" placeholder="you@example.com" aria-label="Email for Plus waitlist" required>
-          <button type="submit" class="btn btn-brand btn-sm">Join</button>
+                <form class="waitlist-form" data-source="pricing" novalidate>
+          <label for="waitlist-email-pricing" class="waitlist-sr-only">Email address</label>
+          <input type="email" id="waitlist-email-pricing" name="email" class="waitlist-input" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit" class="waitlist-button">Join waitlist</button>
+          <p class="waitlist-status" role="status" aria-live="polite"></p>
         </form>
       </div>
       <div class="plan reveal s3">
@@ -127,5 +130,7 @@
 
 <footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="/how-it-works.html">How it works</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/download.html">Download</a></li><li><a href="/faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/press.html">Press</a></li><li><a href="/blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/accessibility.html">Accessibility</a></li><li><a href="/security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="/accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
 <script src="/js/main.js" defer></script>
+<script src="/js/config.js" defer></script>
+<script src="/js/waitlist.js" defer></script>
 </body>
 </html>
