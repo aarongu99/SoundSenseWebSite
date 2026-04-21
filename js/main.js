@@ -19,6 +19,47 @@
   onScroll();
 })();
 
+// Hamburger menu toggle
+(function(){
+  const toggle = document.querySelector('.nav-menu-toggle');
+  const menu = document.getElementById('nav-menu');
+  if (!toggle || !menu) return;
+
+  const open = () => {
+    menu.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+  const close = () => {
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (menu.hidden) open(); else close();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.hidden) {
+      close();
+      toggle.focus();
+    }
+  });
+
+  // Close when clicking outside the menu or toggle
+  document.addEventListener('click', (e) => {
+    if (menu.hidden) return;
+    if (menu.contains(e.target) || toggle.contains(e.target)) return;
+    close();
+  });
+
+  // Close after a menu link is clicked (before navigation happens)
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('a')) close();
+  });
+})();
+
 // FAQ accordion
 (function(){
   document.querySelectorAll('.faq-item').forEach(item=>{
