@@ -55,12 +55,20 @@ h1,h2,h3,h4{font-weight:800;letter-spacing:-0.025em;line-height:1.05;color:var(-
 .nav-links{display:flex;align-items:center;gap:32px;font-size:14px;color:var(--text-2)}
 .nav-links a{transition:color 0.2s}
 .nav-links a:hover{color:var(--text)}
-@media (max-width:720px){.nav-links{gap:10px}.nav-links .nav-link{display:none}}
+
+/* Mobile nav: stack logo on top, full link row below. All nav items stay visible. */
+@media (max-width:720px){
+  .nav-inner{flex-direction:column;justify-content:flex-start;gap:8px;padding:10px 0}
+  .logo{font-size:16px;align-self:center}
+  .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:14px;row-gap:8px;font-size:13px}
+  .nav-links .btn{padding:8px 14px;min-height:32px;font-size:12.5px}
+}
 
 /* "Jeff" memorial link in nav — distinct plum color, italic */
 .nav-links a.nav-jeff{color:#8B6F8A;font-style:italic;font-weight:500;font-size:14px;letter-spacing:-0.005em}
 .nav-links a.nav-jeff:hover{color:#6E5370}
 .nav-links a.nav-jeff:focus-visible{outline:2px solid #8B6F8A;outline-offset:3px;border-radius:4px}
+@media (max-width:720px){.nav-links a.nav-jeff{font-size:13px}}
 
 /* === BUTTONS === */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:var(--r-md);font-weight:500;font-size:14px;transition:all 0.2s cubic-bezier(0.4,0,0.2,1);cursor:pointer;border:none;font-family:inherit;min-height:44px;white-space:nowrap;position:relative}
@@ -219,6 +227,20 @@ section{padding:96px 0;position:relative}
   .pd-sonar-center{width:68px;height:68px}
   .pd-sonar-center svg{width:22px;height:22px}
   .pd-tab{padding:10px 6px}
+}
+
+/* Extra scale-down for very narrow devices (iPhone SE, small Androids) */
+@media (max-width:400px){
+  .phone{width:260px;height:520px;border-radius:40px;padding:5px}
+  .phone-screen{border-radius:35px}
+  .pd-content{padding:0 9px}
+  .pd-sonar-wrap{width:100px;height:100px}
+  .pd-sonar-halo{width:74px;height:74px}
+  .pd-sonar-center{width:58px;height:58px}
+  .pd-sonar-center svg{width:18px;height:18px}
+  .pd-statusbar{font-size:9px;padding:1px 14px 3px}
+  .pd-qa-icon{width:36px;height:36px}
+  .pd-qa-grid{gap:14px}
 }
 
 /* Contact form responsive 2-col row */
