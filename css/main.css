@@ -57,22 +57,10 @@ h1,h2,h3,h4{font-weight:800;letter-spacing:-0.025em;line-height:1.05;color:var(-
 .nav-links a:hover{color:var(--text)}
 @media (max-width:720px){.nav-links{gap:10px}.nav-links .nav-link{display:none}}
 
-/* Hamburger toggle button */
-.nav-menu-toggle{margin-left:10px;width:38px;height:38px;padding:0;border:1px solid var(--border);background:transparent;border-radius:var(--r-md);color:var(--text-2);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background 0.15s ease,border-color 0.15s ease,color 0.15s ease;flex-shrink:0}
-.nav-menu-toggle:hover{background:var(--surface-hover);border-color:var(--brand);color:var(--text)}
-.nav-menu-toggle:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-.nav-menu-toggle[aria-expanded="true"]{background:var(--surface-hover);border-color:var(--brand);color:var(--text)}
-
-/* Dropdown panel */
-.nav-menu{position:absolute;top:100%;right:var(--pad);margin-top:6px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:0 18px 40px -12px rgba(44,34,24,0.18),0 4px 12px -6px rgba(44,34,24,0.1);padding:8px;min-width:220px;display:flex;flex-direction:column;gap:1px;animation:navMenuIn 0.2s cubic-bezier(0.16,1,0.3,1);z-index:60}
-.nav-menu[hidden]{display:none}
-.nav-menu-link{display:block;padding:10px 14px;border-radius:var(--r-md);font-size:14px;font-weight:500;color:var(--text);text-decoration:none;transition:background 0.15s ease,color 0.15s ease}
-.nav-menu-link:hover,.nav-menu-link:focus-visible{background:var(--surface-hover);outline:none}
-.nav-menu-dedication{color:#8B6F8A;font-style:italic;border-top:1px solid var(--border);margin-top:6px;padding-top:14px}
-.nav-menu-dedication:hover,.nav-menu-dedication:focus-visible{background:rgba(139,111,138,0.08);color:#6E5370}
-
-@keyframes navMenuIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-@media (prefers-reduced-motion:reduce){.nav-menu{animation:none}}
+/* "Jeff" memorial link in nav — distinct plum color, italic */
+.nav-links a.nav-jeff{color:#8B6F8A;font-style:italic;font-weight:500;font-size:14px;letter-spacing:-0.005em}
+.nav-links a.nav-jeff:hover{color:#6E5370}
+.nav-links a.nav-jeff:focus-visible{outline:2px solid #8B6F8A;outline-offset:3px;border-radius:4px}
 
 /* === BUTTONS === */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:var(--r-md);font-weight:500;font-size:14px;transition:all 0.2s cubic-bezier(0.4,0,0.2,1);cursor:pointer;border:none;font-family:inherit;min-height:44px;white-space:nowrap;position:relative}
