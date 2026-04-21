@@ -1,0 +1,23 @@
+# Local Claude Code settings (keeps hooks/permissions private)
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Env files (in case Supabase keys ever land here)
+.env
+.env.local
+.env.*.local
+
+# Node (if tooling ever gets added)
+node_modules/
+
+# Logs
+*.log

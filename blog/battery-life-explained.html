@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF7F2">
+<title>Battery Life with SoundSense: What to Expect</title>
+<meta name="description" content="Honest numbers on battery drain, how layered detection keeps it reasonable, and what to do if you need more runtime.">
+<meta name="keywords" content="SoundSense battery life, always-on mic battery, iPhone background audio battery">
+<link rel="canonical" href="https://soundsense.app/blog/battery-life-explained.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soundsense.app/blog/battery-life-explained.html">
+<meta property="og:title" content="Battery Life with SoundSense: What to Expect">
+<meta property="og:description" content="Honest numbers on battery drain and how layered detection keeps it reasonable.">
+<meta property="og:image" content="https://soundsense.app/assets/og-image.png">
+<meta property="og:site_name" content="SoundSense">
+<meta property="article:published_time" content="2026-03-04">
+<meta property="article:author" content="Aaron Guss">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Battery Life with SoundSense">
+<meta name="twitter:description" content="Honest numbers on battery drain from always-on audio.">
+<meta name="twitter:image" content="https://soundsense.app/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Battery Life with SoundSense: What to Expect","description":"Honest numbers on battery drain, layered detection, and tips for more runtime.","image":"https://soundsense.app/assets/og-image.png","datePublished":"2026-03-04","dateModified":"2026-03-04","author":{"@type":"Person","name":"Aaron Guss"},"publisher":{"@type":"Organization","name":"SoundSense","logo":{"@type":"ImageObject","url":"https://soundsense.app/assets/og-image.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://soundsense.app/blog/battery-life-explained.html"}}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a>
+    <div class="nav-links">
+      <a href="/how-it-works.html" class="nav-link">How it works</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+      <a href="/download.html" class="btn btn-brand btn-sm">Download</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<section class="hero" style="padding:72px 0 40px">
+  <div class="wrap" style="max-width:760px">
+    <div class="eyebrow reveal s1">Technical</div>
+    <h1 class="h1 reveal s2" style="margin:18px 0 20px;font-size:clamp(32px,4.5vw,52px);line-height:1.08">Battery Life with SoundSense: What to Expect</h1>
+    <p class="mono reveal s3" style="font-size:13px;color:var(--text-3);letter-spacing:0.06em">Published March 4, 2026 · 4 min read · by Aaron Guss</p>
+  </div>
+</section>
+<div class="wrap" style="max-width:760px"><div class="divider"></div></div>
+<section style="padding:48px 0 96px">
+  <div class="wrap">
+    <article style="max-width:720px;margin:0 auto;font-size:17px;color:var(--text-2);line-height:1.75">
+      <p style="font-size:19px;color:var(--text);line-height:1.7;margin-bottom:28px">Here is the number: SoundSense draws 3 to 7 percent of your iPhone's battery per hour of active listening. That is the honest answer, and it is the one we want you to know before you install the app.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Context for the number</h2>
+      <p style="margin-bottom:20px">Three to seven percent per hour sounds like a lot or a little depending on what you are comparing it to. For reference, approximate hourly drain on a modern iPhone in normal conditions:</p>
+      <ul style="list-style:disc;padding-left:24px;margin-bottom:28px">
+        <li style="margin-bottom:8px">Streaming music (Spotify, screen off, Bluetooth): about 4–8% per hour</li>
+        <li style="margin-bottom:8px">GPS turn-by-turn navigation (screen on): about 15–20% per hour</li>
+        <li style="margin-bottom:8px">Active video call (FaceTime, screen on): about 20–25% per hour</li>
+        <li style="margin-bottom:8px">Idle in your pocket (no apps running): under 1% per hour</li>
+      </ul>
+      <p style="margin-bottom:28px">So SoundSense in active mode is roughly on par with a music streaming session. More than idle, less than navigation. That is where an always-on audio classifier with a well-engineered pipeline should land, and it is where we wanted to land.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">How we got there</h2>
+      <p style="margin-bottom:20px">The naive way to build a sound awareness app is to run the full classifier on every incoming audio frame, 24/7. That is simple code and it would burn 20 to 30 percent of your battery per hour. Unacceptable.</p>
+      <p style="margin-bottom:20px">Instead, SoundSense uses a layered detection pipeline. Stage one is a very lightweight energy-and-frequency monitor that looks at incoming audio and decides whether anything interesting is happening. If not, and most of the time the answer is "no, the room is quiet," the full classifier never wakes up. This stage uses a rounding-error amount of power.</p>
+      <p style="margin-bottom:20px">Stage two is a fast frequency-band match that runs when stage one finds a sharp onset. This is fast enough that it adds minimal drain even when triggering often.</p>
+      <p style="margin-bottom:20px">Stage three, the full neural classifier, only runs when stages one and two agree that something worth classifying is in the audio. In a typical home, this might run only a few dozen times an hour. In a loud environment like a busy cafe or a construction site, it will run more often, and the app's battery cost will push toward the 7% number.</p>
+      <p style="margin-bottom:28px">The practical upshot: SoundSense is efficient in quiet environments (where it mostly has nothing to do) and reasonable in loud environments (where it has to work harder). Either way, you are not going to lose a day of battery to it.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Low-power mode</h2>
+      <p style="margin-bottom:28px">When your iPhone is in low-power mode, SoundSense respects it. In low-power mode we drop the frame rate of the energy monitor, widen the thresholds, and reduce classifier invocations. Detection quality degrades. You will miss some edge cases, but you will not spend more than 1 to 2 percent per hour keeping the app alive. We think of this as a "safety-net mode" rather than normal operation, but it is available when you need it.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Practical patterns</h2>
+      <p style="margin-bottom:14px"><strong style="color:var(--text)">Charge while you sleep.</strong> The most reliable way to keep a full day of SoundSense is to charge overnight. An iPhone at 100% at 7 AM, with SoundSense running all day, will be at 40–60% by 7 PM. That is plenty of headroom for the evening.</p>
+      <p style="margin-bottom:14px"><strong style="color:var(--text)">Top up around lunch.</strong> If you are out all day, a 15–20 minute top-up around midday will comfortably get you to bedtime.</p>
+      <p style="margin-bottom:14px"><strong style="color:var(--text)">Keep wireless earbuds charged.</strong> Bluetooth audio output to earbuds or hearing aids is a small additional draw. Not huge, but worth knowing about.</p>
+      <p style="margin-bottom:28px"><strong style="color:var(--text)">Use the Apple Watch app if you have one.</strong> When the dedicated Plus-tier Watch app is your primary alert channel, you can turn the phone screen off and save the 2–4% per hour that screen-on time would add.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">The commitment</h2>
+      <p style="margin-bottom:20px">We are going to keep publishing honest numbers here, including when they get worse. If a future version of SoundSense spikes to 10% per hour because we added a feature that is not worth the cost, you should be the first to know, and we should probably roll it back.</p>
+      <p style="margin-bottom:28px">The 3–7% range is our target. Anything above that, we will earn it by being honest about why.</p>
+
+      <div style="padding:24px 28px;border:1px solid var(--border);background:var(--surface-hover);border-radius:var(--r-lg);margin-top:48px;display:flex;align-items:center;gap:16px">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--brand-light);border:1px solid rgba(194,149,107,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C2956B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1-4 5-6 8-6s7 2 8 6"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:var(--text);font-size:15px">Aaron Guss</div>
+          <div style="font-size:13px;color:var(--text-3)">Founder, SoundSense · Rochester, NY</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<div class="wrap"><div class="divider"></div></div>
+<section>
+  <div class="wrap" style="max-width:960px">
+    <div class="sec-head reveal s1"><div class="eyebrow">Related reading</div><h2 class="h2" style="font-size:clamp(22px,2.6vw,28px)">More technical.</h2></div>
+    <div class="creds-grid" style="grid-template-columns:repeat(2,1fr);gap:16px">
+      <a href="/blog/on-device-vs-cloud-privacy.html" class="card cred" style="text-decoration:none">
+        <div class="mono" style="font-size:11px;color:var(--text-3);letter-spacing:0.08em;margin-bottom:8px">Technical · 6 min</div>
+        <div class="cred-title" style="margin-bottom:6px">On-Device vs. Cloud Processing</div>
+        <p class="cred-body">Why the architectural choice affects battery, and privacy.</p>
+      </a>
+      <a href="/how-it-works.html" class="card cred" style="text-decoration:none">
+        <div class="mono" style="font-size:11px;color:var(--text-3);letter-spacing:0.08em;margin-bottom:8px">Page · 3 min</div>
+        <div class="cred-title" style="margin-bottom:6px">How SoundSense works</div>
+        <p class="cred-body">The four pillars: always listening, custom training, context, privacy.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="download" class="final-cta">
+  <div class="wrap">
+    <div class="eyebrow reveal s1" style="display:inline-block;margin-bottom:16px">Try it</div>
+    <h2 class="h2 reveal s2">Hear what matters.</h2>
+    <span class="accent reveal s3">All day, reasonable battery.</span>
+    <div class="ctas reveal s4"><a href="/download.html" class="btn btn-primary">Download on the App Store</a></div>
+  </div>
+</section>
+</main>
+<footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="/how-it-works.html">How it works</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/download.html">Download</a></li><li><a href="/faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/press.html">Press</a></li><li><a href="/blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/accessibility.html">Accessibility</a></li><li><a href="/security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="/accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

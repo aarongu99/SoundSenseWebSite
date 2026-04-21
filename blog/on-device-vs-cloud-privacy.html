@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF7F2">
+<title>On-Device vs. Cloud Sound Processing: Why It Matters</title>
+<meta name="description" content="Why SoundSense runs its ML model entirely on your phone. What you trade in cloud processing, what you gain in privacy, and what Apple's silicon makes possible.">
+<meta name="keywords" content="on-device ML vs cloud, Neural Engine sound classification, iOS privacy, no cloud audio">
+<link rel="canonical" href="https://soundsense.app/blog/on-device-vs-cloud-privacy.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soundsense.app/blog/on-device-vs-cloud-privacy.html">
+<meta property="og:title" content="On-Device vs. Cloud Sound Processing: Why It Matters">
+<meta property="og:description" content="Why SoundSense runs its ML model entirely on your phone. What you trade, what you gain.">
+<meta property="og:image" content="https://soundsense.app/assets/og-image.png">
+<meta property="og:site_name" content="SoundSense">
+<meta property="article:published_time" content="2026-04-07">
+<meta property="article:author" content="Aaron Guss">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="On-Device vs. Cloud Sound Processing: Why It Matters">
+<meta name="twitter:description" content="Why SoundSense runs entirely on your phone. What you trade, what you gain.">
+<meta name="twitter:image" content="https://soundsense.app/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"On-Device vs. Cloud Sound Processing: Why It Matters","description":"Why SoundSense runs its ML model entirely on your phone. What you trade in cloud processing, what you gain in privacy.","image":"https://soundsense.app/assets/og-image.png","datePublished":"2026-04-07","dateModified":"2026-04-07","author":{"@type":"Person","name":"Aaron Guss"},"publisher":{"@type":"Organization","name":"SoundSense","logo":{"@type":"ImageObject","url":"https://soundsense.app/assets/og-image.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://soundsense.app/blog/on-device-vs-cloud-privacy.html"}}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a>
+    <div class="nav-links">
+      <a href="/how-it-works.html" class="nav-link">How it works</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+      <a href="/download.html" class="btn btn-brand btn-sm">Download</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<section class="hero" style="padding:72px 0 40px">
+  <div class="wrap" style="max-width:760px">
+    <div class="eyebrow reveal s1">Technical</div>
+    <h1 class="h1 reveal s2" style="margin:18px 0 20px;font-size:clamp(32px,4.5vw,52px);line-height:1.08">On-Device vs. Cloud Sound Processing: Why It Matters</h1>
+    <p class="mono reveal s3" style="font-size:13px;color:var(--text-3);letter-spacing:0.06em">Published April 7, 2026 · 6 min read · by Aaron Guss</p>
+  </div>
+</section>
+<div class="wrap" style="max-width:760px"><div class="divider"></div></div>
+<section style="padding:48px 0 96px">
+  <div class="wrap">
+    <article style="max-width:720px;margin:0 auto;font-size:17px;color:var(--text-2);line-height:1.75">
+      <p style="font-size:19px;color:var(--text);line-height:1.7;margin-bottom:28px">There are two ways to build a sound classifier that runs all day: send the audio to a server and classify it there, or ship the classifier inside the app and run it on the phone. Both approaches work. Only one is tenable for an app that deaf and hard of hearing users depend on. This is the case for why.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">The cloud argument</h2>
+      <p style="margin-bottom:20px">The appeal of cloud processing is simple: a server can run a much larger model than a phone can. You can deploy state-of-the-art architectures, update the model any time you want, and let every user benefit from the same inference engine. The per-inference cost is also cheaper at scale than burning the phone's CPU and battery.</p>
+      <p style="margin-bottom:20px">If the thing you are classifying is occasional and non-sensitive, say, a one-off photo search, that tradeoff can make sense. The latency is acceptable and the privacy surface is manageable.</p>
+      <p style="margin-bottom:28px">Sound awareness is not that problem.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">Why cloud does not work for always-on audio</h2>
+      <p style="margin-bottom:20px"><strong style="color:var(--text)">Latency is a killer.</strong> A smoke alarm alert that arrives 800ms after it should have is not a smoke alarm alert. On a typical cellular connection, round-trip time for a server inference is hundreds of milliseconds before you add the actual model compute. On a flaky network, it is seconds. On no network, the app is dead. The user discovers this at the worst possible moment.</p>
+      <p style="margin-bottom:20px"><strong style="color:var(--text)">Continuous upload is not acceptable.</strong> Sound awareness requires the mic on all day. If every second of audio is streaming to a server, that audio exists somewhere outside the user's control. It can be intercepted, subpoenaed, leaked, or reprocessed. Even with strong TLS and strict data-deletion policies, the fact that the audio exists at all is a privacy surface most users correctly find unacceptable.</p>
+      <p style="margin-bottom:20px"><strong style="color:var(--text)">Battery economics flip.</strong> People assume cloud is cheaper on battery because you are not running ML locally. For continuous audio streams, the opposite is true. Keeping a radio awake to upload audio 24/7 drains the battery far faster than running a lightweight classifier during active hours. Cellular radios are expensive; the Neural Engine is cheap.</p>
+      <p style="margin-bottom:28px"><strong style="color:var(--text)">Trust is binary.</strong> A cloud-processed audio app can claim "we delete the audio immediately." The user has no way to verify that claim. An on-device app can prove it by working with no network at all. That is not a policy promise; it is a physical constraint.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">What Apple's silicon made possible</h2>
+      <p style="margin-bottom:20px">On-device sound classification is not a 2024 idea. What has changed is the economics of doing it well.</p>
+      <p style="margin-bottom:20px">Modern iPhones ship with a dedicated Neural Engine that can run moderately sized ML models at roughly the efficiency of a desktop GPU from ten years ago, at a fraction of the power. Core ML lets us ship models in formats that this Neural Engine can execute directly, without routing through the CPU.</p>
+      <p style="margin-bottom:20px">In practical terms: the classifier SoundSense uses fits in under 20 MB, runs at well under 100 ms per inference on an iPhone XS or newer, and draws a rounding-error amount of power during active inference.</p>
+      <p style="margin-bottom:28px">This was not true in 2018. It was just becoming true in 2022. It is comfortably true in 2026, and it is the reason SoundSense could be built as an on-device app without compromising accuracy.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">What we give up</h2>
+      <p style="margin-bottom:20px">Being honest: on-device processing has tradeoffs.</p>
+      <p style="margin-bottom:20px"><strong style="color:var(--text)">Model size is bounded.</strong> We cannot ship a two-gigabyte model in a phone app. The classifier has to be efficient enough to run on the user's phone while leaving headroom for everything else their phone is doing. That is a real constraint.</p>
+      <p style="margin-bottom:20px"><strong style="color:var(--text)">Updates require app updates.</strong> When we improve the classifier, users need to update the app to get the improvements. We cannot push a new model overnight the way a cloud app can push a new version of an inference stack.</p>
+      <p style="margin-bottom:28px"><strong style="color:var(--text)">Older devices are not supported.</strong> SoundSense requires an iPhone XS or newer, with iOS 16+. Older devices do not have the Neural Engine capability we depend on. This is a real exclusion, and we do not love it. It is the price of the architectural guarantee.</p>
+
+      <h2 style="font-size:26px;font-weight:800;color:var(--text);margin:48px 0 16px;letter-spacing:-0.02em">What we gain</h2>
+      <p style="margin-bottom:20px">For a sound awareness app built for a community where privacy and reliability are non-negotiable, the gain from on-device is straightforward.</p>
+      <p style="margin-bottom:20px">The audio never leaves the phone. Not in airplane mode, not on bad Wi-Fi, not ever. The app works without the network. Latency is dominated by how fast the Neural Engine can run, which is plenty fast. The privacy surface is bounded by iOS's sandbox, not by our server-side data-retention policy, because we do not have a server-side data-retention policy for audio, because we do not have audio to retain.</p>
+      <p style="margin-bottom:28px">That is the architecture. That is why SoundSense looks the way it does. The hard call is an old one; the easy one is the right one for the people who will use the app.</p>
+
+      <div style="padding:24px 28px;border:1px solid var(--border);background:var(--surface-hover);border-radius:var(--r-lg);margin-top:48px;display:flex;align-items:center;gap:16px">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--brand-light);border:1px solid rgba(194,149,107,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C2956B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1-4 5-6 8-6s7 2 8 6"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:var(--text);font-size:15px">Aaron Guss</div>
+          <div style="font-size:13px;color:var(--text-3)">Founder, SoundSense · Rochester, NY</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<div class="wrap"><div class="divider"></div></div>
+<section>
+  <div class="wrap" style="max-width:960px">
+    <div class="sec-head reveal s1"><div class="eyebrow">Related reading</div><h2 class="h2" style="font-size:clamp(22px,2.6vw,28px)">Related.</h2></div>
+    <div class="creds-grid" style="grid-template-columns:repeat(2,1fr);gap:16px">
+      <a href="/blog/battery-life-explained.html" class="card cred" style="text-decoration:none">
+        <div class="mono" style="font-size:11px;color:var(--text-3);letter-spacing:0.08em;margin-bottom:8px">Technical · 4 min</div>
+        <div class="cred-title" style="margin-bottom:6px">Battery Life with SoundSense</div>
+        <p class="cred-body">How layered detection keeps drain reasonable, with honest numbers.</p>
+      </a>
+      <a href="/blog/sound-awareness-guide.html" class="card cred" style="text-decoration:none">
+        <div class="mono" style="font-size:11px;color:var(--text-3);letter-spacing:0.08em;margin-bottom:8px">Guide · 8 min</div>
+        <div class="cred-title" style="margin-bottom:6px">A Guide to Sound Awareness</div>
+        <p class="cred-body">The foundational essay on what sound awareness actually requires.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="download" class="final-cta">
+  <div class="wrap">
+    <div class="eyebrow reveal s1" style="display:inline-block;margin-bottom:16px">Try it</div>
+    <h2 class="h2 reveal s2">Hear what matters.</h2>
+    <span class="accent reveal s3">All on your phone.</span>
+    <div class="ctas reveal s4"><a href="/download.html" class="btn btn-primary">Download on the App Store</a></div>
+  </div>
+</section>
+</main>
+<footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="/how-it-works.html">How it works</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/download.html">Download</a></li><li><a href="/faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/press.html">Press</a></li><li><a href="/blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/accessibility.html">Accessibility</a></li><li><a href="/security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="/accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

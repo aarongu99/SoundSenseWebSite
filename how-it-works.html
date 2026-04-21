@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF7F2">
+<title>How SoundSense Works: On-Device Sound Recognition for Deaf Users</title>
+<meta name="description" content="How SoundSense recognizes your sounds, scales alerts to context, and keeps everything on your device. No cloud. No compromises. Built for deaf and hard of hearing users.">
+<meta name="keywords" content="how sound recognition works, on-device sound classification, deaf iPhone app, context aware alerts, machine learning sound detection">
+<link rel="canonical" href="https://soundsense.app/how-it-works.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soundsense.app/how-it-works.html">
+<meta property="og:title" content="How SoundSense Works: On-Device Sound Recognition">
+<meta property="og:description" content="Four pillars: always listening, learns your sounds, alerts that match the moment, private by design.">
+<meta property="og:image" content="https://soundsense.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"How SoundSense Works","description":"The technology and design behind on-device sound awareness for deaf and hard of hearing users.","author":{"@type":"Organization","name":"SoundSense"},"publisher":{"@type":"Organization","name":"SoundSense"}}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a>
+    <div class="nav-links">
+      <a href="/how-it-works.html" class="nav-link" aria-current="page">How it works</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+      <a href="/download.html" class="btn btn-brand btn-sm">Download</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero" style="padding:72px 0 40px">
+  <div class="wrap">
+    <div class="eyebrow reveal s1">How it works</div>
+    <h1 class="h1 reveal s2" style="margin:18px 0 8px;max-width:880px">The technology behind</h1>
+    <p class="accent reveal s3" style="font-size:clamp(28px,4vw,48px);max-width:780px">a smarter alert.</p>
+    <p class="body reveal s4" style="max-width:640px;margin-top:28px">SoundSense is four technologies working together: a low-power listener, a classifier that learns your specific sounds, a context engine that understands where you are, and a privacy model that keeps everything on your phone.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal s1"><div class="eyebrow">Pillar 01</div><h2 class="h2">Always listening,</h2><p class="accent" style="font-size:clamp(24px,3vw,36px)">without killing your battery.</p></div>
+    <div class="problem-grid">
+      <div class="problem-body reveal s2">
+        <p>SoundSense uses a layered detection pipeline. A lightweight energy and frequency monitor runs continuously, using a fraction of the power a full classifier would. When the monitor notices something potentially meaningful, like a sharp onset, a characteristic frequency band, or a pattern that doesn't match ambient noise, it wakes the full classifier for a closer look.</p>
+        <p>The heavy neural network only runs when it needs to. That's the difference between a battery drain of 3 to 7 percent per hour of active listening and the 20 to 30 percent you'd get from naive always-on classification.</p>
+        <p>iOS handles the background audio session, and the app respects every system power hint. If your phone is in low-power mode, SoundSense adapts without silently degrading its detection.</p>
+      </div>
+      <div class="card reveal s3" style="padding:28px">
+        <div class="eyebrow" style="margin-bottom:16px">Layered detection</div>
+        <div style="font-family:'DM Mono',monospace;font-size:14px;line-height:2;color:var(--text-2)">
+          <div>1. Energy monitor &nbsp;<span style="color:var(--success)">● always on</span></div>
+          <div>2. Frequency match &nbsp;<span style="color:var(--success)">● on trigger</span></div>
+          <div>3. Full classifier &nbsp;<span style="color:var(--brand)">● on match</span></div>
+          <div>4. Context engine &nbsp;<span style="color:var(--brand)">● on classify</span></div>
+          <div>5. Alert delivery &nbsp;<span style="color:var(--critical)">● on decision</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal s1"><div class="eyebrow">Pillar 02</div><h2 class="h2">Learns your specific sounds,</h2><p class="accent" style="font-size:clamp(24px,3vw,36px)">in three samples.</p></div>
+    <div class="problem-grid">
+      <div class="problem-body reveal s2">
+        <p>Your doorbell doesn't sound like everyone's doorbell. Your smoke detector has a specific chirp. Your microwave beeps in a specific cadence. Generic sound detection treats them all as approximations of a category. SoundSense treats each as its own fingerprint.</p>
+        <p>When you add a custom sound, the app records three short samples, extracts a compact acoustic fingerprint, and stores it locally. The next time your phone hears that fingerprint, it knows. No retraining, no cloud dependency, no delay.</p>
+        <p>The base app ships with 11 preset sounds that work out of the box. Custom training is where the accuracy comes from, because your apartment isn't a lab.</p>
+      </div>
+      <div class="card reveal s3" style="padding:28px">
+        <div class="eyebrow" style="margin-bottom:18px">Add a sound</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="padding:14px;background:var(--brand-light);border-radius:10px;border:1px solid rgba(194,149,107,0.3)"><div style="font-size:12px;color:var(--brand-dark);font-weight:600;letter-spacing:0.15em;text-transform:uppercase">Sample 1 of 3</div><div style="font-weight:600;margin-top:4px">Recording your doorbell…</div></div>
+          <div style="padding:14px;background:var(--surface-hover);border-radius:10px"><div style="font-size:13px;color:var(--text-2)">Sample 2 of 3</div><div style="color:var(--text-3)">Tap and play sound again</div></div>
+          <div style="padding:14px;background:var(--surface-hover);border-radius:10px"><div style="font-size:13px;color:var(--text-2)">Sample 3 of 3</div><div style="color:var(--text-3)">Final confirmation</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal s1"><div class="eyebrow">Pillar 03</div><h2 class="h2">Alerts that match</h2><p class="accent" style="font-size:clamp(24px,3vw,36px)">the moment, not the category.</p></div>
+    <div class="context-examples">
+      <div class="ex-card reveal s1"><div class="ex-scene">Home · 3:00 AM · Bedroom</div><h4>Smoke alarm</h4><div class="ex-outcome critical"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 20h20L12 2zm0 6l6.5 10h-13L12 8z"/></svg>Full-screen, strongest haptic, watch vibration, flashlight strobe</div></div>
+      <div class="ex-card reveal s2"><div class="ex-scene">Home · 2:00 PM · Kitchen</div><h4>Microwave beep</h4><div class="ex-outcome" style="background:rgba(91,154,79,0.1);color:var(--success)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>Gentle haptic, logged to timeline</div></div>
+      <div class="ex-card reveal s3"><div class="ex-scene">Office · 10:00 AM</div><h4>Fire alarm test</h4><div class="ex-outcome critical"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 20h20L12 2zm0 6l6.5 10h-13L12 8z"/></svg>Critical, because fire alarm always matters</div></div>
+    </div>
+    <p class="body reveal s4" style="max-width:640px;margin-top:40px;color:var(--text-2)">Every sound gets an urgency score. The score is a function of what the sound is, what time it is, where you are, and what you've told the app matters to you. The more you use it, the better the scoring gets.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal s1"><div class="eyebrow" style="color:var(--success)">Pillar 04</div><h2 class="h2">Private by design,</h2><p class="accent" style="font-size:clamp(24px,3vw,36px)">not by policy.</p></div>
+    <div class="problem-grid">
+      <div class="problem-body reveal s2">
+        <p>Most privacy promises are policies. Ours is architecture. SoundSense doesn't send your audio to the cloud because the app isn't capable of sending your audio to the cloud. There is no server. There is no recording. There is no upload.</p>
+        <p>The machine learning model ships bundled with the app. Your phone does the listening, the classification, and the discarding. In a single operation. The raw audio is never written to disk. Not even in crash reports.</p>
+        <p>If you turn on cloud sync, we sync the <em>names</em> of your sounds (like "Front doorbell" or "Upstairs smoke detector") and their settings, so you can restore on a new phone. We do not sync the fingerprints or the audio. Ever.</p>
+        <p><a href="/security.html" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px">Read the full security page →</a></p>
+      </div>
+      <div class="card reveal s3" style="padding:28px;background:rgba(91,154,79,0.05);border-color:rgba(91,154,79,0.3)">
+        <div class="eyebrow" style="color:var(--success);margin-bottom:16px">What your phone does</div>
+        <div style="font-family:'DM Mono',monospace;font-size:13px;line-height:2;color:var(--text-2)">
+          <div>✓ Capture audio buffer</div>
+          <div>✓ Run classifier locally</div>
+          <div>✓ Match against your fingerprints</div>
+          <div>✓ Calculate urgency score</div>
+          <div>✓ Deliver alert</div>
+          <div>✓ Discard buffer</div>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)"><span style="color:var(--critical)">✗</span> No recording to disk</div>
+          <div><span style="color:var(--critical)">✗</span> No cloud upload</div>
+          <div><span style="color:var(--critical)">✗</span> No crash-report audio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="final-cta">
+  <div class="wrap">
+    <div class="eyebrow reveal s1" style="display:inline-block;margin-bottom:16px">See it in action</div>
+    <h2 class="h2 reveal s2">Hear what matters.</h2>
+    <span class="accent reveal s3">Starting today.</span>
+    <div class="ctas reveal s4"><a href="/download.html" class="btn btn-primary">Download on the App Store</a></div>
+    <p class="note reveal s5">Free to download. No account required.</p>
+  </div>
+</section>
+</main>
+
+<footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="/how-it-works.html">How it works</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/download.html">Download</a></li><li><a href="/faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/press.html">Press</a></li><li><a href="/blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/accessibility.html">Accessibility</a></li><li><a href="/security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="/accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

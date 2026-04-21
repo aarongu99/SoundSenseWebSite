@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF7F2">
+<title>SoundSense FAQ: Questions About Sound Awareness for Deaf Users</title>
+<meta name="description" content="Common questions about SoundSense. Battery, privacy, Apple's Sound Recognition, hearing aid compatibility, Android roadmap. Honest answers.">
+<meta name="keywords" content="SoundSense FAQ, deaf app questions, sound awareness battery, on-device privacy, Apple Sound Recognition comparison">
+<link rel="canonical" href="https://soundsense.app/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soundsense.app/faq.html">
+<meta property="og:title" content="SoundSense FAQ: Questions About Sound Awareness for Deaf Users">
+<meta property="og:description" content="Common questions about SoundSense. Battery, privacy, Apple's Sound Recognition, hearing aid compatibility, Android roadmap. Honest answers.">
+<meta property="og:image" content="https://soundsense.app/assets/og-image.png">
+<meta property="og:site_name" content="SoundSense">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SoundSense FAQ: Questions About Sound Awareness for Deaf Users">
+<meta name="twitter:description" content="Common questions about SoundSense. Battery, privacy, Apple's Sound Recognition, hearing aid compatibility, Android roadmap. Honest answers.">
+<meta name="twitter:image" content="https://soundsense.app/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does this drain my battery?","acceptedAnswer":{"@type":"Answer","text":"More than background music, less than a GPS nav session. The app uses layered detection that keeps the heavy work asleep until something interesting happens, so typical usage adds 3 to 7 percent battery drain per hour of active listening. Full disclosure, always-on microphone access is not free."}},
+{"@type":"Question","name":"Will this work if my phone is in another room?","acceptedAnswer":{"@type":"Answer","text":"It depends on the sound. A smoke alarm across the house, yes. A microwave beep through a closed door, probably not. SoundSense works best when your phone is in the same room as the sounds that matter. We are working on a mic puck for other rooms, but that is a future release."}},
+{"@type":"Question","name":"Does this replace my hearing dog or flashing doorbell?","acceptedAnswer":{"@type":"Answer","text":"No. SoundSense is a supplement, not a replacement. Keep your primary life-safety equipment. A smoke detector is required by code for a reason. A hearing dog is a trained being. SoundSense works alongside both, not instead of either."}},
+{"@type":"Question","name":"What actually happens to my audio?","acceptedAnswer":{"@type":"Answer","text":"Your phone captures short audio buffers in memory, runs them through a sound classifier on the device, and immediately discards the audio. Nothing is written to storage. Nothing is sent to a server. Not even in crash reports. You can verify this by putting your phone in airplane mode; the app keeps working."}},
+{"@type":"Question","name":"How is this different from Apple's Sound Recognition?","acceptedAnswer":{"@type":"Answer","text":"Apple's Sound Recognition is a good starting point and runs entirely on-device. SoundSense goes further in three ways. It lets you train your phone on your specific sounds, in three samples. It scales alerts to urgency, so a fire alarm and a microwave beep are never treated the same. And it uses context, where you are, what time it is, what is normal for the environment, to decide how loudly to interrupt you."}},
+{"@type":"Question","name":"Does it work with my hearing aids or cochlear implant?","acceptedAnswer":{"@type":"Answer","text":"Yes. SoundSense delivers alerts through visual notifications, haptics, and Apple Watch vibrations. It does not depend on your hearing aids or implant to work. If you use Made for iPhone hearing aids, audio cues can also route there if you want them."}},
+{"@type":"Question","name":"When will Android be available?","acceptedAnswer":{"@type":"Answer","text":"Not in 2026. iOS came first because it lets us guarantee the privacy and performance story on one platform. Android is on the roadmap, after the iOS app earns it."}},
+{"@type":"Question","name":"Can a family member or caregiver get alerts for me?","acceptedAnswer":{"@type":"Answer","text":"Not in the free version. Family sharing and caregiver alerts are part of SoundSense Pro, which is launching after the free app proves out. If this is important to you, join the Pro waitlist and tell us how you would use it."}},
+{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. The classifier ships bundled with the app. There is no server. Put your phone in airplane mode, disconnect Wi-Fi, walk into a basement with no signal, SoundSense keeps listening and alerting. The only thing that needs the network is cloud sync of your sound names and settings, which is optional."}},
+{"@type":"Question","name":"What sounds can it detect by default?","acceptedAnswer":{"@type":"Answer","text":"The free app ships with 11 preset categories: smoke alarm, carbon monoxide alarm, doorbell, knock, name called, baby cry, alarm clock, microwave, oven timer, car horn, and siren. You can enable or disable any of them. Custom training lets you add your specific sounds beyond the presets."}},
+{"@type":"Question","name":"Can I use this with my Apple Watch?","acceptedAnswer":{"@type":"Answer","text":"The free app will mirror iPhone notifications to Apple Watch through standard iOS behavior. The dedicated Watch app, with custom urgency haptics, on-wrist alerts, and a standalone timeline, is a SoundSense+ feature when that tier launches."}},
+{"@type":"Question","name":"What languages does the interface support?","acceptedAnswer":{"@type":"Answer","text":"English at launch. Full ASL video support for tutorial and onboarding content is in progress. Additional spoken-language localization will follow based on what the community tells us matters most."}}
+]}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a>
+    <div class="nav-links">
+      <a href="/how-it-works.html" class="nav-link">How it works</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/faq.html" class="nav-link" aria-current="page">FAQ</a>
+      <a href="/download.html" class="btn btn-brand btn-sm">Download</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<section class="hero" style="padding:72px 0 40px">
+  <div class="wrap">
+    <div class="eyebrow reveal s1">FAQ</div>
+    <h1 class="h1 reveal s2" style="margin:18px 0 8px;max-width:880px">Questions</h1>
+    <p class="accent reveal s3" style="font-size:clamp(28px,4vw,48px);max-width:780px">we get asked a lot.</p>
+    <p class="body reveal s4" style="max-width:640px;margin-top:28px">If something is not covered here, email <a href="mailto:support@soundsense.app" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px">support@soundsense.app</a>. A real person reads every message.</p>
+  </div>
+</section>
+<div class="wrap"><div class="divider"></div></div>
+<section id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-head reveal s1">
+        <div class="eyebrow" style="margin-bottom:16px">Support</div>
+        <h2 class="h2">Honest answers</h2>
+        <p class="accent" style="font-size:clamp(22px,2.8vw,30px)">to real questions.</p>
+        <p class="note">We will tell you what SoundSense does well, what it does not do, and what is coming. If your question is not answered here, <a href="mailto:support@soundsense.app" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px">send it to us</a>.</p>
+      </div>
+      <div class="faq-list reveal s2">
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Does this drain my battery?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">More than background music, less than a GPS nav session. The app uses layered detection that keeps the heavy work asleep until something interesting happens, so typical usage adds 3 to 7 percent battery drain per hour of active listening. Full disclosure, always-on microphone access is not free. <a href="/blog/battery-life-explained.html" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px">Read the battery deep dive</a>.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Will this work if my phone is in another room?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">It depends on the sound. A smoke alarm across the house, yes. A microwave beep through a closed door, probably not. SoundSense works best when your phone is in the same room as the sounds that matter. We are working on a mic puck for other rooms, but that is a future release.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Does this replace my hearing dog or flashing doorbell?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">No. SoundSense is a supplement, not a replacement. Keep your primary life-safety equipment. A smoke detector is required by code for a reason. A hearing dog is a trained being. SoundSense works alongside both, not instead of either.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>What actually happens to my audio?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Your phone captures short audio buffers in memory, runs them through a sound classifier on the device, and immediately discards the audio. Nothing is written to storage. Nothing is sent to a server. Not even in crash reports. You can verify this by putting your phone in airplane mode; the app keeps working.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>How is this different from Apple's Sound Recognition?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Apple's Sound Recognition is a good starting point and runs entirely on-device. SoundSense goes further in three ways. It lets you train your phone on your specific sounds, in three samples. It scales alerts to urgency, so a fire alarm and a microwave beep are never treated the same. And it uses context, where you are, what time it is, what is normal for the environment, to decide how loudly to interrupt you. Apple's feature is a useful baseline. SoundSense is built specifically for people who depend on sound awareness every day. <a href="/blog/apple-sound-recognition-vs.html" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px">Read the full comparison</a>.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Does it work with my hearing aids or cochlear implant?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. SoundSense delivers alerts through visual notifications, haptics, and Apple Watch vibrations. It does not depend on your hearing aids or implant to work. If you use Made for iPhone hearing aids, audio cues can also route there if you want them.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>When will Android be available?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Not in 2026. iOS came first because it lets us guarantee the privacy and performance story on one platform. Android is on the roadmap, after the iOS app earns it.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Can a family member or caregiver get alerts for me?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Not in the free version. Family sharing and caregiver alerts are part of SoundSense Pro, which is launching after the free app proves out. If this is important to you, <a href="/pricing.html" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px">join the waitlist</a> and tell us how you would use it.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Does it work offline?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. The classifier ships bundled with the app. There is no server. Put your phone in airplane mode, disconnect Wi-Fi, walk into a basement with no signal, SoundSense keeps listening and alerting. The only thing that needs the network is cloud sync of your sound names and settings, which is optional.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>What sounds can it detect by default?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The free app ships with 11 preset categories: smoke alarm, carbon monoxide alarm, doorbell, knock, name called, baby cry, alarm clock, microwave, oven timer, car horn, and siren. You can enable or disable any of them. Custom training lets you add your specific sounds beyond the presets.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>Can I use this with my Apple Watch?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The free app will mirror iPhone notifications to Apple Watch through standard iOS behavior. The dedicated Watch app, with custom urgency haptics, on-wrist alerts, and a standalone timeline, is a SoundSense+ feature when that tier launches.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false"><span>What languages does the interface support?</span><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">English at launch. Full ASL video support for tutorial and onboarding content is in progress. Additional spoken-language localization will follow based on what the community tells us matters most.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="download" class="final-cta">
+  <div class="wrap">
+    <div class="eyebrow reveal s1" style="display:inline-block;margin-bottom:16px">Ready when you are</div>
+    <h2 class="h2 reveal s2">Hear what matters.</h2>
+    <span class="accent reveal s3">Starting today.</span>
+    <div class="ctas reveal s4"><a href="/download.html" class="btn btn-primary">Download on the App Store</a></div>
+    <p class="note reveal s5">Free. No account required.</p>
+  </div>
+</section>
+</main>
+<footer id="support"><div class="wrap"><div class="footer-grid"><div class="footer-mission"><a href="/" class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2l2-6 4 12 3-9 2 5h5"/></svg>SoundSense</a><p>Built at RIT with the deaf and hard of hearing community. Made in Rochester, NY.</p></div><div class="footer-col"><h4>Product</h4><ul><li><a href="/how-it-works.html">How it works</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/download.html">Download</a></li><li><a href="/faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/press.html">Press</a></li><li><a href="/blog/">Blog</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li><li><a href="/accessibility.html">Accessibility</a></li><li><a href="/security.html">Security</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 SoundSense. SoundSense is a trademark. Apple, iPhone, and App Store are trademarks of Apple Inc.</p><div class="footer-legal"><a href="/accessibility.html">WCAG 2.1 AA</a><a href="mailto:privacy@soundsense.app">privacy@soundsense.app</a></div></div></div></footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>
