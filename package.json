@@ -1,0 +1,26 @@
+{
+  "name": "soundsense-site",
+  "version": "1.0.0",
+  "description": "Static HTML marketing site for SoundSense — the sound awareness iOS app for deaf and hard of hearing users. Built at RIT with NTID.",
+  "main": "index.js",
+  "scripts": {
+    "build:logo": "node scripts/generate-logo-assets.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aarongu99/SoundSenseWebSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aarongu99/SoundSenseWebSite/issues"
+  },
+  "homepage": "https://github.com/aarongu99/SoundSenseWebSite#readme",
+  "devDependencies": {
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5"
+  }
+}
