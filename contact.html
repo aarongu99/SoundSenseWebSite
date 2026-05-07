@@ -90,7 +90,7 @@ h1,h2,h3,h4{font-weight:800;letter-spacing:-0.025em;line-height:1.05;color:var(-
 /* Mobile nav: stack logo on top, full link row below. All nav items stay visible. */
 @media (max-width:720px){
   .nav-inner{flex-direction:column;justify-content:flex-start;gap:8px;padding:10px 0}
-  .logo{font-size:16px;align-self:center}
+  .logo{font-size:16px;align-self:center;gap:10px}.logo img{width:36px !important;height:36px !important}
   .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:14px;row-gap:8px;font-size:13px}
   .nav-links .btn{padding:8px 14px;min-height:32px;font-size:12.5px}
 }
@@ -491,7 +491,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:64px
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2956B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
           <div class="cred-title">Press</div>
         </div>
-        <p class="cred-body">Journalists, podcasts, and media covering accessibility and deaf-community tech. Full kit at <a href="press.html" style="color:var(--brand)">/press</a>.</p>
+        <p class="cred-body">Journalists, podcasts, and media covering accessibility and deaf-community tech. Full kit at <span style="color:var(--brand)">/press</span>.</p>
         <p class="mono" style="font-size:13px;color:var(--brand);margin-top:12px">press@soundsense.app</p>
       </a>
       <a href="mailto:security@soundsense.app" class="card cred reveal s3" style="text-decoration:none">
@@ -499,7 +499,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:64px
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <div class="cred-title">Security</div>
         </div>
-        <p class="cred-body">Vulnerability reports and responsible disclosure. We acknowledge within 48 hours. See <a href="security.html" style="color:var(--brand)">/security</a>.</p>
+        <p class="cred-body">Vulnerability reports and responsible disclosure. We acknowledge within 48 hours. See <span style="color:var(--brand)">/security</span>.</p>
         <p class="mono" style="font-size:13px;color:var(--brand);margin-top:12px">security@soundsense.app</p>
       </a>
       <a href="mailto:partnerships@soundsense.app" class="card cred reveal s4" style="text-decoration:none">
